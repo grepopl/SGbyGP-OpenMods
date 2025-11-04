@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SGbyGP-OpenMods-ID-000002 - 🛒 Automatyczne przeliczanie zawartości koszyka po zmianie ilości z opóźnieniem czasowym</title>
+    <!-- MOD GREPO START -->
+    <script>
+        let przeliczTimeout;
+        $(document).ready(function () {
+            $(".InputPrzeliczKoszyk").on("change", function () {
+                clearTimeout(przeliczTimeout);
+                przeliczTimeout = setTimeout(function () {
+                    PrzeliczCalyKoszyk();
+                }, 1000); /* czas w milisekundach – 1000 = 1 sekunda */
+            });
+        });
+    </script>
+    <!-- MOD GREPO STOP -->
+</head>
+<body>
+    
+</body>
+</html>
